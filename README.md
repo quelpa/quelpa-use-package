@@ -12,13 +12,14 @@ Assuming you have bootstrapped `quelpa` and installed `use-package` probably lik
 (quelpa '(use-package :fetcher github :repo "jwiegley/use-package" :files ("use-package.el")))
 ```
 
-To use the `:quelpa` keyword with `use-package`, require the library:
+To use the `:quelpa` keyword with `use-package`, install `quelpa-use-package` and require the library:
 
 ```cl
+(quelpa '(quelpa-use-package :fetcher github :repo "quelpa/quelpa-use-package"))
 (require 'quelpa-use-package)
 ```
 
-then it's possible to call `use-package` with all kinds of arguments:
+After that it is possible to call `use-package` with the `:quelpa` keyword:
 
 ```cl
 (use-package abc-mode :quelpa) ;installs abc-mode with quelpa
@@ -28,3 +29,5 @@ then it's possible to call `use-package` with all kinds of arguments:
 (use-package abc-mode :quelpa (abc-mode :fetcher github :repo "mkjunker/abc-mode")) ;uses recipe
 (use-package abc-mode :quelpa ((abc-mode :fetcher github :repo "mkjunker/abc-mode") :upgrade t)) ;recipe with plist arguments
 ```
+
+Note that that the `:quelpa` keyword is added right after `:disabled` so it has preference over any other `use-package` keyword (which makes kind of sense because to do something with a package you first need to have it installed :)
