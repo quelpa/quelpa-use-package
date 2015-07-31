@@ -1,6 +1,6 @@
-# quelpa-use-package.el
+# quelpa-use-package
 
-If you are using [use-package](https://github.com/jwiegley/use-package) (which can help to simplify your .emacs) you can use the `quelpa` handler provided by `quelpa-use-package.el`.
+If you are using [use-package](https://github.com/jwiegley/use-package) (which can help to simplify your .emacs) you can use the [quelpa](https://github.com/quelpa/quelpa) handler provided by `quelpa-use-package`.
 
 Assuming you have bootstrapped `quelpa` and installed `use-package` probably like this:
 
