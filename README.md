@@ -1,6 +1,5 @@
+[![Home](https://raw.github.com/quelpa/quelpa/master/logo/quelpa-logo-h64.png)](https://github.com/quelpa/quelpa)
 # quelpa-use-package
-
-[![Home](https://raw.github.com/quelpa/quelpa/master/logo/quelpa-logo-h128.png)](https://github.com/quelpa/quelpa)
 
 [![Build Status](https://travis-ci.org/quelpa/quelpa-use-package.svg?branch=master)](https://travis-ci.org/quelpa/quelpa-use-package)
 
