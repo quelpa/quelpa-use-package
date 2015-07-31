@@ -1,5 +1,9 @@
 # quelpa-use-package
 
+[![Home](https://raw.github.com/quelpa/quelpa/master/logo/quelpa-logo-h128.png)](https://github.com/quelpa/quelpa)
+
+[![Build Status](https://travis-ci.org/quelpa/quelpa-use-package.svg?branch=master)](https://travis-ci.org/quelpa/quelpa-use-package)
+
 If you are using [use-package](https://github.com/jwiegley/use-package) (which can help to simplify your .emacs) you can use the [quelpa](https://github.com/quelpa/quelpa) handler provided by `quelpa-use-package`.
 
 Assuming you have bootstrapped `quelpa` and installed `use-package` probably like this:
