@@ -20,3 +20,7 @@
 (use-package git-modes :quelpa (git-modes :fetcher github :repo "magit/git-modes"))
 (use-package git-timemachine :quelpa ((git-timemachine :fetcher github :repo "pidu/git-timemachine") :stable t))
 (use-package git-timemachine :quelpa ((git-timemachine :fetcher github :repo "pidu/git-timemachine") :upgrade t))
+
+;; show us the cache
+(require 'pp)
+(pp quelpa-cache)
