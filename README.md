@@ -8,13 +8,20 @@ If you are using [use-package](https://github.com/jwiegley/use-package) (which c
 Assuming you have bootstrapped `quelpa` and installed `use-package` probably like this:
 
 ```cl
-(quelpa '(use-package :fetcher github :repo "jwiegley/use-package" :files ("use-package.el")))
+(quelpa
+ '(use-package
+      :fetcher github
+      :repo "jwiegley/use-package"
+      :files ("use-package.el")))
 ```
 
 To use the `:quelpa` keyword with `use-package`, install `quelpa-use-package` and require the library:
 
 ```cl
-(quelpa '(quelpa-use-package :fetcher github :repo "quelpa/quelpa-use-package"))
+(quelpa
+ '(quelpa-use-package
+   :fetcher github
+   :repo "quelpa/quelpa-use-package"))
 (require 'quelpa-use-package)
 ```
 
