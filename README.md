@@ -21,12 +21,25 @@ To use the `:quelpa` keyword with `use-package`, install `quelpa-use-package` an
 After that it is possible to call `use-package` with the `:quelpa` keyword:
 
 ```cl
-(use-package abc-mode :quelpa) ;installs abc-mode with quelpa
-(use-package abc-mode :quelpa t) ;does the same
-(use-package abc-mode :quelpa abc-mode) ;again... (if the package would have another name)
-(use-package abc-mode :quelpa (:upgrade t)) ;passes upgrade parameter to quelpa
-(use-package abc-mode :quelpa (abc-mode :fetcher github :repo "mkjunker/abc-mode")) ;uses recipe
-(use-package abc-mode :quelpa ((abc-mode :fetcher github :repo "mkjunker/abc-mode") :upgrade t)) ;recipe with plist arguments
+;; installs abc-mode with quelpa
+(use-package abc-mode :quelpa)
+
+;; does the same (`t' is optional)
+(use-package abc-mode :quelpa t)
+
+;; again... (if the package would have another name)
+(use-package abc-mode :quelpa abc-mode)
+
+;; passes upgrade parameter to quelpa
+(use-package abc-mode :quelpa (:upgrade t))
+
+;; uses the given recipe
+(use-package abc-mode
+  :quelpa (abc-mode :fetcher github :repo "mkjunker/abc-mode"))
+
+;; recipe with plist arguments
+(use-package abc-mode
+  :quelpa ((abc-mode :fetcher github :repo "mkjunker/abc-mode") :upgrade t))
 ```
 
 Note that the `:quelpa` keyword is inserted after `:if`, `:when`, `:unless` and `:requires` so that you can make the installation of a package depend on some requirement, for example:
