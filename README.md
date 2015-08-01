@@ -5,17 +5,7 @@
 
 If you are using [use-package](https://github.com/jwiegley/use-package) (which can help to simplify your .emacs) you can use the [quelpa](https://github.com/quelpa/quelpa) handler provided by `quelpa-use-package`.
 
-Assuming you have bootstrapped `quelpa` and installed `use-package` probably like this:
-
-```cl
-(quelpa
- '(use-package
-      :fetcher github
-      :repo "jwiegley/use-package"
-      :files ("use-package.el")))
-```
-
-To use the `:quelpa` keyword with `use-package`, install `quelpa-use-package` and require the library:
+Assuming you have bootstrapped `quelpa`, install `quelpa-use-package` (which installs `use-package` as a dependency) and require the library:
 
 ```cl
 (quelpa
