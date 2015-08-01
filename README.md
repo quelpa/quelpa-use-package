@@ -29,4 +29,20 @@ After that it is possible to call `use-package` with the `:quelpa` keyword:
 (use-package abc-mode :quelpa ((abc-mode :fetcher github :repo "mkjunker/abc-mode") :upgrade t)) ;recipe with plist arguments
 ```
 
-Note that that the `:quelpa` keyword is added right after `:disabled` so it has preference over any other `use-package` keyword (which makes kind of sense because to do something with a package you first need to have it installed :)
+Note that the `:quelpa` keyword is inserted after `:if`, `:when`, `:unless` and `:requires` so that you can make the installation of a package depend on some requirement, for example:
+
+```cl
+(use-package magit-filenotify
+  :when (fboundp 'file-notify-add-watch)
+  :quelpa (magit-filenotify :fetcher github :repo "magit/magit-filenotify")
+```
+
+In this case `magit-filenotify` is only installed if the function `file-notify-add-watch` is bound.
+
+Likewise you can use `:requires` to make the installation depend on a feature being available:
+
+```cl
+(use-package magit-filenotify
+  :requires filenotify
+  :quelpa (magit-filenotify :fetcher github :repo "magit/magit-filenotify"))
+```

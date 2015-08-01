@@ -43,11 +43,12 @@
 
 (defvar quelpa-use-package-keyword :quelpa)
 
-;; insert `:quelpa' keyword after `:disabled'
+;; insert `:quelpa' keyword after `:requires' so that quelpa only runs
+;; if either `:if', `:when', `:unless' or `:requires' are satisfied
 (defun quelpa-use-package-set-keyword ()
   (unless (member quelpa-use-package-keyword use-package-keywords)
     (setq use-package-keywords
-          (let* ((pos (cl-position :disabled use-package-keywords))
+          (let* ((pos (cl-position :requires use-package-keywords))
                  (head (cl-subseq use-package-keywords 0 (+ 1 pos)))
                  (tail (nthcdr (+ 1 pos) use-package-keywords)))
             (append head (list quelpa-use-package-keyword) tail)))))
@@ -68,10 +69,11 @@
   (let ((body (use-package-process-keywords name-symbol rest state)))
     ;; This happens at macro expansion time, not when the expanded code is
     ;; compiled or evaluated.
-    (when args
-      (quelpa-use-package-set-keyword)
-      (apply 'quelpa args))
-    body))
+    (if args
+        (use-package-concat
+         `((apply 'quelpa ',args))
+         body)
+      body)))
 
 ;; register keyword on require
 (quelpa-use-package-set-keyword)
