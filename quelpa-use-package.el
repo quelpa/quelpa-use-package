@@ -61,7 +61,7 @@
       ((pred listp) (cond
                      ((listp (car arg)) arg)
                      ((string-match "^:" (symbol-name (car arg))) (cons name-symbol arg))
-                     ((symbolp (car arg)) arg)
+                     ((symbolp (car arg)) args)
                      ((t nil))))
       (_ nil))))
 
