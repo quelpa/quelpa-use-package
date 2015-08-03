@@ -7,7 +7,7 @@ If you are using [use-package](https://github.com/jwiegley/use-package) (which c
 
 ## Installation
 
-***Requirements**): Emacs 24.4
+***Requirements**: Emacs 24.4
 
 Assuming you have bootstrapped `quelpa`, install `quelpa-use-package` (which installs `use-package` as a dependency) and require the library:
 
@@ -69,13 +69,13 @@ Likewise you can use `:requires` to make the installation depend on a feature be
 
 To install some packages with quelpa but use `use-package-always-ensure` to install all others from an ELPA repo `:ensure` needs to be disabled if the `:quelpa` keyword is found.
 
-`quelpa-use-package` provides and advice for this purpose which can be activated thus:
+`quelpa-use-package` provides an advice for this purpose which can be activated thus:
 
 ```cl
 (quelpa-use-package-activate-advice)
 ```
 
-and to disable it again you can use:
+To disable it again you can use:
 
 ```cl
 (quelpa-use-package-deactivate-advice)
