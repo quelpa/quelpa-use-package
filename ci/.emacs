@@ -21,6 +21,12 @@
 (use-package git-timemachine :quelpa ((git-timemachine :fetcher github :repo "pidu/git-timemachine") :stable t))
 (use-package git-timemachine :quelpa ((git-timemachine :fetcher github :repo "pidu/git-timemachine") :upgrade t))
 
+;; test advice
+(setq use-package-always-ensure t)
+(quelpa-use-package-activate-advice)
+(use-package kite-mini
+  :quelpa (kite-mini :fetcher github :repo "tungd/kite-mini.el"))
+
 ;; show us the cache
 (require 'pp)
 (pp quelpa-cache)
