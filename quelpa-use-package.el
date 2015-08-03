@@ -5,7 +5,7 @@
 ;; Author: steckerhalter
 ;; URL: https://github.com/quelpa/quelpa-use-package
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "24.4") (quelpa "0") (use-package "2"))
+;; Package-Requires: ((emacs "24.3") (quelpa "0") (use-package "2"))
 ;; Keywords: package management elpa use-package
 
 ;; This file is not part of GNU Emacs.
@@ -33,7 +33,7 @@
 
 ;;; Requirements:
 
-;; Emacs 24.4, `quelpa' and `use-package'
+;; Emacs 24.3, `quelpa' and `use-package'
 
 ;;; Code:
 
@@ -81,16 +81,24 @@
                   ensure)))
     (funcall func name-symbol keyword ensure rest state)))
 
+(defadvice use-package-handler/:ensure (before quelpa-use-package/:ensure)
+  (when (plist-member rest :quelpa)
+    (ad-set-arg 2 nil)))
+
 (defun quelpa-use-package-activate-advice ()
-  (advice-add
-   'use-package-handler/:ensure
-   :around
-   'quelpa-use-package-override-:ensure))
+  (if (version< emacs-version "24.4")
+      (ad-activate 'use-package-handler/:ensure t)
+    (advice-add
+     'use-package-handler/:ensure
+     :around
+     'quelpa-use-package-override-:ensure)))
 
 (defun quelpa-use-package-deactivate-advice ()
-  (advice-remove
-   'use-package-handler/:ensure
-   'quelpa-use-package-override-:ensure))
+  (if (version< emacs-version "24.4")
+      (ad-deactivate 'use-package-handler/:ensure)
+    (advice-remove
+     'use-package-handler/:ensure
+     'quelpa-use-package-override-:ensure)))
 
 ;; register keyword on require
 (quelpa-use-package-set-keyword)

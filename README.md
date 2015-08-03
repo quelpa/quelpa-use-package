@@ -7,7 +7,7 @@ If you are using [use-package](https://github.com/jwiegley/use-package) (which c
 
 ## Installation
 
-**Requirements**: Emacs 24.4
+**Requirements**: Emacs 24.3
 
 Assuming you have bootstrapped `quelpa`, install `quelpa-use-package` (which installs `use-package` as a dependency) and require the library:
 
