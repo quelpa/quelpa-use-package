@@ -62,7 +62,7 @@
                      ((listp (car arg)) arg)
                      ((string-match "^:" (symbol-name (car arg))) (cons name-symbol arg))
                      ((symbolp (car arg)) args)
-                     ((t nil))))
+                     (t nil)))
       (_ nil))))
 
 (defun use-package-handler/:quelpa (name-symbol keyword args rest state)
