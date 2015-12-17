@@ -37,9 +37,9 @@
 
 ;;; Code:
 
-(require 'cl-lib)
-(require 'quelpa)
-(require 'use-package)
+(eval-when-compile
+  (require 'cl-lib)
+  (require 'use-package))
 
 (defvar quelpa-use-package-keyword :quelpa)
 
