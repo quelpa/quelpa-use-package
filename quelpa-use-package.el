@@ -38,7 +38,6 @@
 ;;; Code:
 
 (require 'cl-lib)
-(require 'quelpa)
 (require 'use-package)
 
 (defvar quelpa-use-package-keyword :quelpa)
