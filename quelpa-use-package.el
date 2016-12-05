@@ -69,7 +69,8 @@
     ;; compiled or evaluated.
     (if args
         (use-package-concat
-         `((apply 'quelpa ',args))
+         `((unless (package-installed-p ',name-symbol)
+             (apply 'quelpa ',args)))
          body)
       body)))
 
