@@ -37,8 +37,14 @@
 
 ;;; Code:
 
+(defvar quelpa-use-package-inhibit-loading-quelpa nil
+  "If non-nil, `quelpa-use-package' will do its best to avoid
+loading `quelpa' unless necessary. This improves performance, but
+can prevent packages from being updated automatically.")
+
 (require 'cl-lib)
-(require 'quelpa)
+(unless quelpa-use-package-inhibit-loading-quelpa
+  (require 'quelpa))
 (require 'use-package)
 
 (defvar quelpa-use-package-keyword :quelpa)
@@ -70,7 +76,9 @@
     ;; compiled or evaluated.
     (if args
         (use-package-concat
-         `((apply 'quelpa ',args))
+         `((unless (and quelpa-use-package-inhibit-loading-quelpa
+                        (package-installed-p ',name-symbol))
+             (apply 'quelpa ',args)))
          body)
       body)))
 
