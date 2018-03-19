@@ -67,11 +67,13 @@ And if you enable `use-package-always-ensure`:
 (setq use-package-always-ensure t)
 ```
 
+then
+
 ``` cl
 (use-package abc-mode)
 ```
 
-Will install `abc-mode` with `quelpa`.
+will install `abc-mode` with `quelpa`.
 
 ### Conditional execution
 
