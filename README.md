@@ -45,6 +45,34 @@ After that it is possible to call `use-package` with the `:quelpa` keyword:
   :quelpa ((abc-mode :fetcher github :repo "mkjunker/abc-mode") :upgrade t))
 ```
 
+### Using quelpa with `:ensure`
+
+To make `:ensure t` use `quelpa` instead of `package.el` set the `use-package-ensure-function` in your init file:
+
+```cl
+(setq use-package-ensure-function 'quelpa)
+```
+
+After that:
+
+```cl
+(use-package abc-mode :ensure t)
+```
+
+will install `abc-mode` with `quelpa`.
+
+And if you enable `use-package-always-ensure`:
+
+``` cl
+(setq use-package-always-ensure t)
+```
+
+``` cl
+(use-package abc-mode)
+```
+
+Will install `abc-mode` with `quelpa`.
+
 ### Conditional execution
 
 Note that the `:quelpa` keyword is inserted after `:if`, `:when`, `:unless` and `:requires` so that you can make the installation of a package depend on some requirement, for example:
