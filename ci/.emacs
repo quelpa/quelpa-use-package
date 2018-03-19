@@ -1,4 +1,5 @@
 ;; bootstrap quelpa
+(setq package-archives nil)
 (package-initialize)
 (unless (require 'quelpa nil t)
   (with-temp-buffer
@@ -26,6 +27,14 @@
 (quelpa-use-package-activate-advice)
 (use-package kite-mini
   :quelpa (kite-mini :fetcher github :repo "tungd/kite-mini.el"))
+(quelpa-use-package-deactivate-advice)
+
+;; test ensure
+(setq use-package-ensure-function 'quelpa)
+(setq use-package-always-ensure nil)
+(use-package abc-mode :ensure t)
+(setq use-package-always-ensure t)
+(use-package elisp-slime-nav)
 
 ;; show us the cache
 (require 'pp)
