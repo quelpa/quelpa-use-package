@@ -6,7 +6,7 @@
     (eval-buffer)))
 
 ;; install use-package
-(quelpa '(use-package :fetcher github :repo "jwiegley/use-package" :files ("use-package.el")))
+(quelpa 'use-package)
 
 ;; require the library
 (add-to-list 'load-path travis-ci-dir)
