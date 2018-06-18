@@ -3,7 +3,7 @@
 ;; Copyright 2015, Steckerhalter
 
 ;; Author: steckerhalter
-;; URL: https://github.com/quelpa/quelpa-use-package
+;; URL: https://framagit.org/steckerhalter/quelpa-use-package
 ;; Version: 0.0.1
 ;; Package-Requires: ((emacs "24.3") (quelpa "0") (use-package "2"))
 ;; Keywords: package management elpa use-package
@@ -29,7 +29,7 @@
 
 ;; quelpa handler for `use-package'
 ;; See the the repo website for more info:
-;; https://github.com/quelpa/quelpa-use-package
+;; https://framagit.org/steckerhalter/quelpa-use-package
 
 ;;; Requirements:
 
