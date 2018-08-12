@@ -49,12 +49,12 @@ can prevent packages from being updated automatically.")
 
 (defvar quelpa-use-package-keyword :quelpa)
 
-;; insert `:quelpa' keyword after `:requires' so that quelpa only runs
+;; insert `:quelpa' keyword after `:unless' so that quelpa only runs
 ;; if either `:if', `:when', `:unless' or `:requires' are satisfied
 (defun quelpa-use-package-set-keyword ()
   (unless (member quelpa-use-package-keyword use-package-keywords)
     (setq use-package-keywords
-          (let* ((pos (cl-position :requires use-package-keywords))
+          (let* ((pos (cl-position :unless use-package-keywords))
                  (head (cl-subseq use-package-keywords 0 (+ 1 pos)))
                  (tail (nthcdr (+ 1 pos) use-package-keywords)))
             (append head (list quelpa-use-package-keyword) tail)))))
