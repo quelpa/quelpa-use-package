@@ -45,7 +45,7 @@ can prevent packages from being updated automatically.")
 (require 'cl-lib)
 (unless quelpa-use-package-inhibit-loading-quelpa
   (require 'quelpa))
-(require 'use-package)
+(require 'use-package-core)
 
 (defvar quelpa-use-package-keyword :quelpa)
 
