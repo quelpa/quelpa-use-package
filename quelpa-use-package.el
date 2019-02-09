@@ -77,7 +77,9 @@ can prevent packages from being updated automatically.")
     (if args
         (use-package-concat
          `((unless (and quelpa-use-package-inhibit-loading-quelpa
-                        (package-installed-p ',name-symbol))
+                        (package-installed-p ',(pcase (car args)
+                                                ((pred symbolp) (car args))
+                                                ((pred listp) (car (car args))))))
              (apply 'quelpa ',args)))
          body)
       body)))
