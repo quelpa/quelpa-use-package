@@ -78,8 +78,8 @@ can prevent packages from being updated automatically.")
         (use-package-concat
          `((unless (and quelpa-use-package-inhibit-loading-quelpa
                         (package-installed-p ',(pcase (car args)
-                                                ((pred symbolp) (car args))
-                                                ((pred listp) (car (car args))))))
+                                                 ((pred symbolp) (car args))
+                                                 ((pred listp) (car (car args))))))
              (apply 'quelpa ',args)))
          body)
       body)))
