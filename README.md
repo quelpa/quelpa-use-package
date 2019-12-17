@@ -1,9 +1,7 @@
-<a href="https://framagit.org/steckerhalter/quelpa"><img align="right" src="https://framagit.org/steckerhalter/quelpa/raw/master/logo/quelpa-logo-h64.png"></a>
+<a href="https://github.com/quelpa/quelpa"><img align="right" src="https://github.com/quelpa/quelpa/raw/master/logo/quelpa-logo-h64.png"></a>
 # quelpa-use-package
 
-**Note:** repo is now on [framagit.org](https://framagit.org/steckerhalter/quelpa-use-package), github is just a mirror
-
-If you are using [use-package](https://github.com/jwiegley/use-package) (which can help to simplify your .emacs) you can use the [quelpa](https://framagit.org/steckerhalter/quelpa) handler provided by `quelpa-use-package`.
+If you are using [use-package](https://github.com/jwiegley/use-package) (which can help to simplify your .emacs) you can use the [quelpa](https://github.com/quelpa/quelpa) handler provided by `quelpa-use-package`.
 
 ## Installation
 
@@ -15,7 +13,7 @@ Assuming you have bootstrapped `quelpa`, install `quelpa-use-package` (which ins
 (quelpa
  '(quelpa-use-package
    :fetcher git
-   :url "https://framagit.org/steckerhalter/quelpa-use-package.git"))
+   :url "https://github.com/quelpa/quelpa-use-package.git"))
 (require 'quelpa-use-package)
 ```
 
