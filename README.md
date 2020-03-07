@@ -1,11 +1,13 @@
 <a href="https://github.com/quelpa/quelpa"><img align="right" src="https://github.com/quelpa/quelpa/raw/master/logo/quelpa-logo-h64.png"></a>
 # quelpa-use-package
 
+[![MELPA](https://melpa.org/packages/quelpa-use-package-badge.svg)](https://melpa.org/#/quelpa-use-package)
+
 If you are using [use-package](https://github.com/jwiegley/use-package) (which can help to simplify your .emacs) you can use the [quelpa](https://github.com/quelpa/quelpa) handler provided by `quelpa-use-package`.
 
 ## Installation
 
-**Requirements**: Emacs 24.3
+**Requirements**: Emacs 25.1
 
 Assuming you have bootstrapped `quelpa`, install `quelpa-use-package` (which installs `use-package` as a dependency) and require the library:
 
