@@ -1,16 +1,17 @@
 ;; bootstrap quelpa
 (setq package-archives nil)
 (package-initialize)
-(unless (require 'quelpa nil t)
+(unless (package-installed-p 'quelpa)
   (with-temp-buffer
-    (url-insert-file-contents "https://raw.github.com/quelpa/quelpa/master/bootstrap.el")
-    (eval-buffer)))
+    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
 
 ;; install use-package
 (quelpa 'use-package)
 
 ;; require the library
-(add-to-list 'load-path travis-ci-dir)
+(add-to-list 'load-path top-dir)
 (require 'quelpa-use-package)
 
 ;; test some installs
@@ -19,8 +20,8 @@
 (use-package flx-ido :quelpa (:stable t))
 (use-package flx-ido :quelpa ((flx-ido) :upgrade t))
 (use-package git-modes :quelpa (git-modes :fetcher github :repo "magit/git-modes"))
-(use-package git-timemachine :quelpa ((git-timemachine :fetcher github :repo "pidu/git-timemachine") :stable t))
-(use-package git-timemachine :quelpa ((git-timemachine :fetcher github :repo "pidu/git-timemachine") :upgrade t))
+(use-package git-timemachine :quelpa ((git-timemachine :fetcher gitlab :repo "pidu/git-timemachine") :stable t))
+(use-package git-timemachine :quelpa ((git-timemachine :fetcher gitlab :repo "pidu/git-timemachine") :upgrade t))
 
 ;; test advice
 (setq use-package-always-ensure t)
