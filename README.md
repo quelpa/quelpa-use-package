@@ -45,6 +45,8 @@ After that it is possible to call `use-package` with the `:quelpa` keyword:
   :quelpa ((abc-mode :fetcher github :repo "mkjunker/abc-mode") :upgrade t))
 ```
 
+The `quelpa` handler is compatible with [MELPA's recipe format](https://github.com/melpa/melpa#recipe-format). You may want to check the optional properties not mentioned above.
+
 ### Using quelpa with `:ensure`
 
 To make `:ensure t` use `quelpa` instead of `package.el` set the `use-package-ensure-function` in your init file:
