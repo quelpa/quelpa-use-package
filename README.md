@@ -3,6 +3,7 @@
 
 [![Build Status](https://travis-ci.org/quelpa/quelpa-use-package.svg?branch=master)](https://travis-ci.org/quelpa/quelpa-use-package)
 [![MELPA](https://melpa.org/packages/quelpa-use-package-badge.svg)](https://melpa.org/#/quelpa-use-package)
+[![MELPA Stable](https://stable.melpa.org/packages/quelpa-use-package-badge.svg)](https://stable.melpa.org/#/quelpa-use-package)
 
 If you are using [use-package](https://github.com/jwiegley/use-package) (which can help to simplify your .emacs) you can use the [quelpa](https://github.com/quelpa/quelpa) handler provided by `quelpa-use-package`.
 
