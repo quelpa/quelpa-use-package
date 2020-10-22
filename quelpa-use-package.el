@@ -5,7 +5,7 @@
 ;; Author: steckerhalter
 ;; URL: https://github.com/quelpa/quelpa-use-package
 ;; Version: 0.0.1
-;; Package-Requires: ((emacs "25.1") (quelpa "0") (use-package "2"))
+;; Package-Requires: ((emacs "25.1") (quelpa "1.0") (use-package "2"))
 ;; Keywords: package management elpa use-package
 
 ;; This file is not part of GNU Emacs.
