@@ -37,10 +37,23 @@
 
 ;;; Code:
 
-(defvar quelpa-use-package-inhibit-loading-quelpa nil
+(defgroup quelpa-use-package nil
+  "Quelpa handler for `use-package'."
+  :prefix "quelpa-use-package"
+  :group 'use-package)
+
+(defcustom quelpa-use-package-inhibit-loading-quelpa nil
   "If non-nil, `quelpa-use-package' will do its best to avoid
 loading `quelpa' unless necessary. This improves performance, but
-can prevent packages from being updated automatically.")
+can prevent packages from being updated automatically."
+  :type 'boolean
+  :group 'quelpa-use-package)
+
+(defcustom quelpa-use-package-as-source-of-truth nil
+  "If non-nil, only packages installed via this will be managed by `quelpa'.
+This option will disable `quelpa-persistent-cache-p'."
+  :type 'boolean
+  :group 'quelpa-use-package)
 
 (require 'cl-lib)
 (unless quelpa-use-package-inhibit-loading-quelpa
@@ -48,6 +61,11 @@ can prevent packages from being updated automatically.")
 (require 'use-package-core)
 
 (defvar quelpa-use-package-keyword :quelpa)
+(defvar quelpa-cache)
+(defvar quelpa-persistent-cache-p)
+
+(when quelpa-use-package-as-source-of-truth
+  (setq quelpa-persistent-cache-p nil))
 
 ;; insert `:quelpa' keyword after `:unless' so that quelpa only runs
 ;; if either `:if', `:when', `:unless' or `:requires' are satisfied
@@ -76,10 +94,15 @@ can prevent packages from being updated automatically.")
     ;; compiled or evaluated.
     (if args
         (use-package-concat
-         `((unless (and quelpa-use-package-inhibit-loading-quelpa
+         `((if (and quelpa-use-package-inhibit-loading-quelpa
                         (package-installed-p ',(pcase (car args)
                                                  ((pred symbolp) (car args))
                                                  ((pred listp) (car (car args))))))
+               (when quelpa-use-package-as-source-of-truth
+                 (setq quelpa-cache (append (when (boundp 'quelpa-cache) quelpa-cache)
+                                            ',(pcase (car args)
+                                                ((pred symbolp) (list args))
+                                                ((pred listp) args)))))
              (apply 'quelpa ',args)))
          body)
       body)))
