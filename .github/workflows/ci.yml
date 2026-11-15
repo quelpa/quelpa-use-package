@@ -14,7 +14,6 @@ jobs:
         emacs-version:
           - "29.1"
           - "30.1"
-          - "snapshot"
     
     # Equivalent to Travis's allow_failures for master/snapshot
     continue-on-error: ${{ matrix.emacs-version == 'snapshot' }}
