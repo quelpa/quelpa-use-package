@@ -9,7 +9,7 @@ If you are using [use-package](https://github.com/jwiegley/use-package) (which c
 
 ## Installation
 
-**Requirements**: Emacs 25.1
+**Requirements**: Emacs 29.1
 
 Assuming you have bootstrapped `quelpa`, install `quelpa-use-package` (which installs `use-package` as a dependency) and require the library:
 
