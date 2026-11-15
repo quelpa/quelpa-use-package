@@ -32,6 +32,8 @@ jobs:
         run: emacs --version
 
       - name: Run Tests
+        env:
+          PAGER: cat
         run: |
           dir="$PWD"
           emacs --batch --eval "(defvar top-dir \"$dir\")" --load "$dir/ci/.emacs"
