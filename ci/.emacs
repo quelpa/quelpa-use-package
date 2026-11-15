@@ -20,7 +20,7 @@
 (use-package flx-ido :quelpa (:stable t))
 (use-package flx-ido :quelpa ((flx-ido) :upgrade t))
 ;; compat is needed for git-modes
-(use-package compat :quelpa (compat :fetcher git :github :repo "emacs-compat/compat"))
+(use-package compat :quelpa (compat :fetcher github :github :repo "emacs-compat/compat"))
 (use-package git-modes :quelpa (git-modes :fetcher github :repo "magit/git-modes"))
 (use-package git-timemachine :quelpa ((git-timemachine :fetcher gitlab :repo "pidu/git-timemachine") :stable t))
 (use-package git-timemachine :quelpa ((git-timemachine :fetcher gitlab :repo "pidu/git-timemachine") :upgrade t))
