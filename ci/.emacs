@@ -22,8 +22,8 @@
 ;; compat is needed for git-modes
 (use-package compat :quelpa ((compat :fetcher github :repo "emacs-compat/compat") :upgrade t))
 (use-package git-modes :quelpa (git-modes :fetcher github :repo "magit/git-modes"))
-(use-package git-timemachine :quelpa ((git-timemachine :git :url "https://codeberg.org/pidu/git-timemachine") :stable t))
-(use-package git-timemachine :quelpa ((git-timemachine :git :url "https://codeberg.org/pidu/git-timemachine") :upgrade t))
+(use-package git-timemachine :quelpa ((git-timemachine :fetcher git :url "https://codeberg.org/pidu/git-timemachine") :stable t))
+(use-package git-timemachine :quelpa ((git-timemachine :fetcher git :url "https://codeberg.org/pidu/git-timemachine") :upgrade t))
 
 ;; test advice
 (setq use-package-always-ensure t)
