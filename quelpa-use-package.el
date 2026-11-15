@@ -1,11 +1,12 @@
 ;;; quelpa-use-package.el --- quelpa handler for use-package
 
-;; Copyright 2015, Steckerhalter
+;; Copyright 2026, @steckerhalter
 
-;; Author: steckerhalter
-;; URL: https://github.com/quelpa/quelpa-use-package
-;; Version: 0.0.1
-;; Package-Requires: ((emacs "25.1") (quelpa "1.0") (use-package "2"))
+;; Author: Reto Hubmann (@steckerhalter)
+;; Version: 0.0.2
+;; Package-Origin: (quelpa-use-package :url "https://github.com/quelpa/quelpa-use-package")
+;; Package-Requires: ((emacs "29.1") (quelpa "1.0"))
+;; Package-Requires-Origins: ((quelpa :url "https://github.com/quelpa/quelpa"))
 ;; Keywords: package management elpa use-package
 
 ;; This file is not part of GNU Emacs.
