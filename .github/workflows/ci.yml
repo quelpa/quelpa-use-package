@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "*" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        emacs-version:
+          - "29.1"
+          - "30.1"
+          - "snapshot"
+    
+    # Equivalent to Travis's allow_failures for master/snapshot
+    continue-on-error: ${{ matrix.emacs-version == 'snapshot' }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Emacs
+        uses: purcell/setup-emacs@master
+        with:
+          version: ${{ matrix.emacs-version }}
+
+      - name: Verify Emacs Version
+        run: emacs --version
+
+      - name: Run Test Script
+        run: ./ci/run.sh
