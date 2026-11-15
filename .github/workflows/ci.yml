@@ -32,5 +32,7 @@ jobs:
       - name: Verify Emacs Version
         run: emacs --version
 
-      - name: Run Test Script
-        run: ./ci/run.sh
+      - name: Run Tests
+        run: |
+          dir="$PWD"
+          emacs --batch --eval "(defvar top-dir \"$dir\")" --load "$dir/ci/.emacs"
