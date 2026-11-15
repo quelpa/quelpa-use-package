@@ -1,7 +1,7 @@
 <a href="https://github.com/quelpa/quelpa"><img align="right" src="https://github.com/quelpa/quelpa/raw/master/logo/quelpa-logo-h64.png"></a>
 # quelpa-use-package
 
-[![Build Status](https://travis-ci.org/quelpa/quelpa-use-package.svg?branch=master)](https://travis-ci.org/quelpa/quelpa-use-package)
+[![Build Status](https://github.com/quelpa/quelpa-use-package/actions/workflows/ci.yml/badge.svg)](https://github.com/quelpa/quelpa-use-package/actions/workflows/ci.yml)
 [![MELPA](https://melpa.org/packages/quelpa-use-package-badge.svg)](https://melpa.org/#/quelpa-use-package)
 [![MELPA Stable](https://stable.melpa.org/packages/quelpa-use-package-badge.svg)](https://stable.melpa.org/#/quelpa-use-package)
 
